@@ -7,15 +7,15 @@
 //
 
 #import "ViewController.h"
+#import "CompartirViewController.h"
 
 #import "CodificacionBraille.h"
 
 #import <AVFoundation/AVFoundation.h>
 #import <UIKit/UIKit.h>
-#import <MessageUI/MFMessageComposeViewController.h>
 
 
-@interface ViewController () <UITextFieldDelegate, UIGestureRecognizerDelegate, MFMessageComposeViewControllerDelegate>
+@interface ViewController () <UITextFieldDelegate, UIGestureRecognizerDelegate>
 
 // Declaración de propiedades de los valores de los botones y del tiempo de detección.
 
@@ -144,8 +144,6 @@
     
     [self.synthesizer speakUtterance:utterance];
     
-    //[self sendSMS:self.frase recipientList:[NSArray arrayWithObjects: nil]];
-    
     [self resetButtonStates];
 }
 
@@ -216,21 +214,10 @@
     
 }
 
-- (void)sendSMS:(NSString *)bodyOfMessage recipientList:(NSArray *)recipients
-{
-  MFMessageComposeViewController *controller = [[MFMessageComposeViewController alloc] init];
-  if([MFMessageComposeViewController canSendText])
-  {
-    controller.body = bodyOfMessage;    
-    controller.recipients = recipients;
-    controller.messageComposeDelegate = self;
-    [self presentViewController:controller animated:YES completion:nil];
-  }    
-}
-
 - (void)handleSwipe:(UISwipeGestureRecognizer *)recognizer{
     [self performSegueWithIdentifier:@"show_compartir" sender:self];
 }
+
 
 @end
 

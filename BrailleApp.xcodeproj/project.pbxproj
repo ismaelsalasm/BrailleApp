@@ -17,6 +17,7 @@
 		C8A94EF61B30A56E002030EC /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C8A94EF51B30A56E002030EC /* AVFoundation.framework */; };
 		C8A94EF81B30AF82002030EC /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C8A94EF71B30AF82002030EC /* UIKit.framework */; };
 		C8A94EFA1B30AF88002030EC /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C8A94EF91B30AF88002030EC /* MessageUI.framework */; };
+		C8A94EFD1B30B7DF002030EC /* CompartirViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C8A94EFC1B30B7DF002030EC /* CompartirViewController.m */; };
 		C8F305541AE00B0B00BB62FF /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C8F305531AE00B0B00BB62FF /* main.m */; };
 		C8F305571AE00B0B00BB62FF /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C8F305561AE00B0B00BB62FF /* AppDelegate.m */; };
 		C8F3055A1AE00B0B00BB62FF /* BrailleApp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = C8F305581AE00B0B00BB62FF /* BrailleApp.xcdatamodeld */; };
@@ -52,6 +53,8 @@
 		C8A94EF51B30A56E002030EC /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		C8A94EF71B30AF82002030EC /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		C8A94EF91B30AF88002030EC /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
+		C8A94EFB1B30B7DF002030EC /* CompartirViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CompartirViewController.h; sourceTree = "<group>"; };
+		C8A94EFC1B30B7DF002030EC /* CompartirViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CompartirViewController.m; sourceTree = "<group>"; };
 		C8F3054E1AE00B0B00BB62FF /* BrailleApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BrailleApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C8F305521AE00B0B00BB62FF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C8F305531AE00B0B00BB62FF /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -130,6 +133,8 @@
 				C8F3055B1AE00B0B00BB62FF /* ViewController.h */,
 				C8F3055C1AE00B0B00BB62FF /* ViewController.m */,
 				C8F3055E1AE00B0B00BB62FF /* Main.storyboard */,
+				C8A94EFB1B30B7DF002030EC /* CompartirViewController.h */,
+				C8A94EFC1B30B7DF002030EC /* CompartirViewController.m */,
 				C8F3057F1AE0137000BB62FF /* Model.xcdatamodeld */,
 				C8F305611AE00B0B00BB62FF /* Images.xcassets */,
 				C8F305631AE00B0B00BB62FF /* LaunchScreen.xib */,
@@ -278,6 +283,7 @@
 				C8F3055A1AE00B0B00BB62FF /* BrailleApp.xcdatamodeld in Sources */,
 				C8F305871AE014AA00BB62FF /* Codificacion.m in Sources */,
 				C8F305811AE0137000BB62FF /* Model.xcdatamodeld in Sources */,
+				C8A94EFD1B30B7DF002030EC /* CompartirViewController.m in Sources */,
 				C8F3055D1AE00B0B00BB62FF /* ViewController.m in Sources */,
 				C8F305541AE00B0B00BB62FF /* main.m in Sources */,
 				C8A4C0D61AFD24F200168155 /* CodificacionBraille.m in Sources */,

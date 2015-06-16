@@ -87,16 +87,17 @@
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
                         <outlet property="mensajeTextField" destination="lPC-Om-CLi" id="i8f-aK-MJB"/>
+                        <segue destination="saV-Ba-7LZ" kind="show" identifier="show_compartir" id="kD5-5Q-BaX"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="861" y="210"/>
+            <point key="canvasLocation" x="952" y="210"/>
         </scene>
-        <!--View Controller-->
+        <!--Compartir View Controller-->
         <scene sceneID="5co-zU-7Ai">
             <objects>
-                <viewController id="saV-Ba-7LZ" sceneMemberID="viewController">
+                <viewController id="saV-Ba-7LZ" customClass="CompartirViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="wFI-T4-lxm"/>
                         <viewControllerLayoutGuide type="bottom" id="8uS-8F-Qon"/>
@@ -109,7 +110,7 @@
                                 <rect key="frame" x="0.0" y="-81" width="320" height="705"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hip-1D-yeh">
-                                        <rect key="frame" x="101" y="425" width="106" height="30"/>
+                                        <rect key="frame" x="42" y="425" width="106" height="30"/>
                                         <color key="backgroundColor" red="0.95789726666471298" green="0.99531685837642137" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         <state key="normal" title="BORRAR">
                                             <color key="titleShadowColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
@@ -150,6 +151,16 @@
                                         <state key="normal" title="Compartir en Facebook">
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="i16-GJ-Soc">
+                                        <rect key="frame" x="161" y="425" width="106" height="30"/>
+                                        <color key="backgroundColor" red="0.95789726669999997" green="0.99531685839999995" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <state key="normal" title="VOLVER">
+                                            <color key="titleShadowColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="volverAction:" destination="saV-Ba-7LZ" eventType="touchUpInside" id="bn0-6q-qrI"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                             </scrollView>
