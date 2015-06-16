@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>89345E7C-2EAD-47E8-B02B-4A84D7DC9143</string>
+	<key>IDESourceControlProjectName</key>
+	<string>BrailleApp</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>F5634DD89B6CE08FD48C7241386FF9AAAED18E48</key>
+		<string>https://github.com/ismaelsalasm/BrailleApp.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>BrailleApp.xcodeproj</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>F5634DD89B6CE08FD48C7241386FF9AAAED18E48</key>
+		<string>../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/ismaelsalasm/BrailleApp.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>F5634DD89B6CE08FD48C7241386FF9AAAED18E48</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>F5634DD89B6CE08FD48C7241386FF9AAAED18E48</string>
+			<key>IDESourceControlWCCName</key>
+			<string>BrailleApp</string>
+		</dict>
+	</array>
+</dict>
+</plist>

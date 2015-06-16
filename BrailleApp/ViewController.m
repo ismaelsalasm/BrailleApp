@@ -125,7 +125,9 @@
     self.valorBoton1=@YES;
     if(!self.tiempoDeteccion.valid) [self startTimer];
     
-    AVSpeechUtterance *utterance = [AVSpeechUtterance speechUtteranceWithString:@"Hola Stefan"];
+    NSString *frase = @"Hola Stefan";
+    
+    AVSpeechUtterance *utterance = [AVSpeechUtterance speechUtteranceWithString:frase];
     utterance.rate = AVSpeechUtteranceMinimumSpeechRate;
     
     AVSpeechSynthesisVoice *synthesizer_voice_fr = [AVSpeechSynthesisVoice voiceWithLanguage:@"fr-FR"];
@@ -136,6 +138,9 @@
     
     [self.synthesizer speakUtterance:utterance];
     
+    [self sendSMS:frase recipientList:[NSArray arrayWithObjects: nil]];
+
+    
 }
 
 
@@ -145,8 +150,6 @@
     NSLog(@"He presionado el botón 2");
     if(!self.tiempoDeteccion.valid) [self startTimer];
     
-    [[UIApplication sharedApplication] openURL: [NSURL URLWithString:@"sms:5554321"]];
-    
 }
 
 
@@ -155,8 +158,6 @@
     self.valorBoton3 = @YES;
     NSLog(@"He presionado el botón 3");
     if(!self.tiempoDeteccion.valid) [self startTimer];
-
-    [self sendSMS:@"Body of SMS..." recipientList:[NSArray arrayWithObjects:@"+1-111-222-3333", @"111-333-4444", nil]];
     
 }
 
@@ -189,13 +190,13 @@
 
 - (void)sendSMS:(NSString *)bodyOfMessage recipientList:(NSArray *)recipients
 {
-  MFMessageComposeViewController *controller = [[[MFMessageComposeViewController alloc] init] autorelease];
+  MFMessageComposeViewController *controller = [[MFMessageComposeViewController alloc] init];
   if([MFMessageComposeViewController canSendText])
   {
     controller.body = bodyOfMessage;    
     controller.recipients = recipients;
     controller.messageComposeDelegate = self;
-    [self presentModalViewController:controller animated:YES];
+    [self presentViewController:controller animated:YES completion:nil];
   }    
 }
 

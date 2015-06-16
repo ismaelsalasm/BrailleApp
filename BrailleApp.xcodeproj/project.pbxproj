@@ -15,6 +15,8 @@
 		C848E7051B114B4900E8FF99 /* button1.png in Resources */ = {isa = PBXBuildFile; fileRef = C848E7041B114B4900E8FF99 /* button1.png */; };
 		C8A4C0D61AFD24F200168155 /* CodificacionBraille.m in Sources */ = {isa = PBXBuildFile; fileRef = C8A4C0D51AFD24F200168155 /* CodificacionBraille.m */; };
 		C8A94EF61B30A56E002030EC /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C8A94EF51B30A56E002030EC /* AVFoundation.framework */; };
+		C8A94EF81B30AF82002030EC /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C8A94EF71B30AF82002030EC /* UIKit.framework */; };
+		C8A94EFA1B30AF88002030EC /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C8A94EF91B30AF88002030EC /* MessageUI.framework */; };
 		C8F305541AE00B0B00BB62FF /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C8F305531AE00B0B00BB62FF /* main.m */; };
 		C8F305571AE00B0B00BB62FF /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C8F305561AE00B0B00BB62FF /* AppDelegate.m */; };
 		C8F3055A1AE00B0B00BB62FF /* BrailleApp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = C8F305581AE00B0B00BB62FF /* BrailleApp.xcdatamodeld */; };
@@ -48,6 +50,8 @@
 		C8A4C0D51AFD24F200168155 /* CodificacionBraille.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CodificacionBraille.m; sourceTree = "<group>"; };
 		C8A94EF41B307B40002030EC /* ios_development 3.cer */ = {isa = PBXFileReference; lastKnownFileType = file; name = "ios_development 3.cer"; path = "../ios_development 3.cer"; sourceTree = "<group>"; };
 		C8A94EF51B30A56E002030EC /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		C8A94EF71B30AF82002030EC /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		C8A94EF91B30AF88002030EC /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
 		C8F3054E1AE00B0B00BB62FF /* BrailleApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BrailleApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C8F305521AE00B0B00BB62FF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C8F305531AE00B0B00BB62FF /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -72,6 +76,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C8A94EFA1B30AF88002030EC /* MessageUI.framework in Frameworks */,
+				C8A94EF81B30AF82002030EC /* UIKit.framework in Frameworks */,
 				C8A94EF61B30A56E002030EC /* AVFoundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -89,6 +95,8 @@
 		C8F305451AE00B0B00BB62FF = {
 			isa = PBXGroup;
 			children = (
+				C8A94EF91B30AF88002030EC /* MessageUI.framework */,
+				C8A94EF71B30AF82002030EC /* UIKit.framework */,
 				C8A94EF51B30A56E002030EC /* AVFoundation.framework */,
 				C8A94EF41B307B40002030EC /* ios_development 3.cer */,
 				C848E7041B114B4900E8FF99 /* button1.png */,
