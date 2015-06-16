@@ -26,6 +26,8 @@
 @property (nonatomic) NSNumber *valorBoton5;
 @property (nonatomic) NSNumber *valorBoton6;
 
+@property (nonatomic, strong) NSString *frase;
+
 @property (nonatomic, strong) AVSpeechSynthesizer *synthesizer;
 
 @property (strong, nonatomic) NSTimer *tiempoDeteccion;
@@ -48,6 +50,8 @@
     // Do any additional setup after loading the view, typically from a nib.(Acciones después de que se haya cargado la Vista)
     
     self.synthesizer = [[AVSpeechSynthesizer alloc] init];
+    
+    self.frase=@"";
     
     
     // Resetear el estado de los Botones: todos a NO.
@@ -101,6 +105,38 @@
 
     NSLog(@"Respuesta: %@",value);
     
+    if (value==@"∞") {
+        if ([self.frase length] > 0) {
+            self.frase = [self.frase substringToIndex:[self.frase length] - 1];
+        } else {
+            //no characters to delete... attempting to do so will result in a crash
+        }
+    } else if (value==@"#"){
+        self.frase = @"";
+    }
+    else{
+        self.frase = [self.frase stringByAppendingString:value];
+    }
+    
+    NSLog(@"Frase: %@",self.frase);
+    
+    
+    self.mensajeTextField.text = self.frase;
+    
+
+    
+    AVSpeechUtterance *utterance = [AVSpeechUtterance speechUtteranceWithString:self.frase];
+    utterance.rate = AVSpeechUtteranceMinimumSpeechRate;
+    
+    AVSpeechSynthesisVoice *synthesizer_voice_fr = [AVSpeechSynthesisVoice voiceWithLanguage:@"fr-FR"];
+    AVSpeechSynthesisVoice *synthesizer_voice_en = [AVSpeechSynthesisVoice voiceWithLanguage:@"en-US"];
+    AVSpeechSynthesisVoice *synthesizer_voice_es = [AVSpeechSynthesisVoice voiceWithLanguage:@"es-ES"];
+    
+    utterance.voice = synthesizer_voice_es;
+    
+    [self.synthesizer speakUtterance:utterance];
+    
+    //[self sendSMS:self.frase recipientList:[NSArray arrayWithObjects: nil]];
     
     [self resetButtonStates];
 }
@@ -124,22 +160,6 @@
     NSLog(@"He presionado el botón 1");
     self.valorBoton1=@YES;
     if(!self.tiempoDeteccion.valid) [self startTimer];
-    
-    NSString *frase = @"Hola Stefan";
-    
-    AVSpeechUtterance *utterance = [AVSpeechUtterance speechUtteranceWithString:frase];
-    utterance.rate = AVSpeechUtteranceMinimumSpeechRate;
-    
-    AVSpeechSynthesisVoice *synthesizer_voice_fr = [AVSpeechSynthesisVoice voiceWithLanguage:@"fr-FR"];
-    AVSpeechSynthesisVoice *synthesizer_voice_en = [AVSpeechSynthesisVoice voiceWithLanguage:@"en-US"];
-    AVSpeechSynthesisVoice *synthesizer_voice_es = [AVSpeechSynthesisVoice voiceWithLanguage:@"es-ES"];
-    
-    utterance.voice = synthesizer_voice_es;
-    
-    [self.synthesizer speakUtterance:utterance];
-    
-    [self sendSMS:frase recipientList:[NSArray arrayWithObjects: nil]];
-
     
 }
 
