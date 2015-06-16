@@ -218,15 +218,12 @@
     [self performSegueWithIdentifier:@"show_compartir" sender:self];
 }
 
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if ([segue.destinationViewController isKindOfClass:[CompartirViewController class]]) {
+        CompartirViewController *rvc = (CompartirViewController *)segue.destinationViewController;
+        rvc.frase = self.frase;
+    }
+}
 
 @end
-
-
-
-
-
-
-
-
-
-    
