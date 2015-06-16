@@ -15,7 +15,7 @@
 #import <MessageUI/MFMessageComposeViewController.h>
 
 
-@interface ViewController () <UITextFieldDelegate, MFMessageComposeViewControllerDelegate>
+@interface ViewController () <UITextFieldDelegate, UIGestureRecognizerDelegate, MFMessageComposeViewControllerDelegate>
 
 // Declaración de propiedades de los valores de los botones y del tiempo de detección.
 
@@ -25,6 +25,8 @@
 @property (nonatomic) NSNumber *valorBoton4;
 @property (nonatomic) NSNumber *valorBoton5;
 @property (nonatomic) NSNumber *valorBoton6;
+
+- (void) handleSwipe:(UISwipeGestureRecognizer *)recognizer;
 
 @property (nonatomic, strong) NSString *frase;
 
@@ -65,6 +67,12 @@
                                           action:@selector(hideKeyBoard)];
     
     [self.view addGestureRecognizer:tapGesture];
+
+    UISwipeGestureRecognizer * swipeRecognizer = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(handleSwipe:)];
+    swipeRecognizer.numberOfTouchesRequired = 2;
+    swipeRecognizer.direction = UISwipeGestureRecognizerDirectionLeft;
+    swipeRecognizer.delegate = self;
+    [self.view addGestureRecognizer:swipeRecognizer];
 }
 
 - (void)hideKeyBoard {
@@ -218,6 +226,10 @@
     controller.messageComposeDelegate = self;
     [self presentViewController:controller animated:YES completion:nil];
   }    
+}
+
+- (void)handleSwipe:(UISwipeGestureRecognizer *)recognizer{
+    [self performSegueWithIdentifier:@"show_compartir" sender:self];
 }
 
 @end
