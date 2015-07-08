@@ -111,7 +111,7 @@
 }
 */
 - (IBAction)volverAction:(id)sender {
-    [self dismissViewControllerAnimated:YES completion:nil];
+//    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 /*- (void)sendSMS:(NSString *)bodyOfMessage recipientList:(NSArray *)recipients
@@ -200,6 +200,7 @@
     UITouch* touch = [[event allTouches] anyObject];
     if (touch.tapCount == 2) {
         // do action.
+        [self dismissViewControllerAnimated:YES completion:nil];
     }
 }
 
