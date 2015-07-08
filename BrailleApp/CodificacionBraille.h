@@ -10,6 +10,10 @@
 
 @interface CodificacionBraille : NSObject
 
+@property (nonatomic, strong) NSDictionary *dictMinusculas;
+@property (nonatomic, strong) NSDictionary *dictMayusculas;
+@property (nonatomic, strong) NSDictionary *dictNumeros;
+
 - (NSString*)letraConCodificacion:(NSArray *)Codificacion usarDictionary:(NSString *)usarDictionary;
 
 

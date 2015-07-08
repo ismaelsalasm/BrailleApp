@@ -17,9 +17,9 @@
 
 // Declaración de propiedades de los diccionarios.
 
-@property (nonatomic, strong) NSDictionary *dictMinusculas;
-@property (nonatomic, strong) NSDictionary *dictMayusculas;
-@property (nonatomic, strong) NSDictionary *dictNumeros;
+//@property (nonatomic, strong) NSDictionary *dictMinusculas;
+//@property (nonatomic, strong) NSDictionary *dictMayusculas;
+//@property (nonatomic, strong) NSDictionary *dictNumeros;
 
 @end
 
@@ -67,8 +67,8 @@
                             @"010111" : @"w",
                             @"111101" : @"&",
                             @"001000" : @".",
-                            @"001111" : @" ", //prefijo numérico
-                            @"000101" : @" ", //prefijo mayúscula
+                            @"001111" : @"ª", //prefijo numérico
+                            @"000101" : @"º", //prefijo mayúscula
                             @"010000" : @",",
                             @"011000" : @";",
                             @"010010" : @":",
@@ -84,16 +84,16 @@
                             @"001110" : @")",
                             @"100001" : @"/",
                             @"100011" : @"%",
-                            @"100101" : @"#",
+                            @"100101" : @"+",
                             @"011011" : @"^",
-                            @"110101" : @"ç",
+                            @"110101" : @"\n", //salto de línea
                             @"000110" : @"=",
-                            @"000011" : @"+",
+                            @"000011" : @"∞∞", //borrar cadena de caracteres
                             @"000111" : @">",
                             @"001011" : @"<",
                             @"100111" : @"_", //guíon bajo
                             @"000001" : @" ", //espacio
-                            @"000010" : @"∞", //borrar
+                            @"000010" : @"∞", //borrar carácter
                             @"111111" : @"\n", //salto de línea
                             @"000000" : @" " //no puede ser nada
                             };
@@ -139,8 +139,8 @@
                             @"010111" : @"W",
                             @"111101" : @"&",
                             @"001000" : @".",
-                            @"001111" : @" ", //prefijo numérico
-                            @"000101" : @" ", //prefijo mayúscula
+                            @"001111" : @"º", //prefijo numérico
+                            @"000101" : @"ª", //prefijo mayúscula
                             @"010000" : @",",
                             @"011000" : @";",
                             @"010010" : @":",
@@ -156,16 +156,16 @@
                             @"001110" : @")",
                             @"100001" : @"/",
                             @"100011" : @"%",
-                            @"100101" : @"#",
+                            @"100101" : @"+",
                             @"011011" : @"^",
-                            @"110101" : @"Ç",
+                            @"110101" : @"\n", //salto de línea
                             @"000110" : @"=",
-                            @"000011" : @"+",
+                            @"000011" : @"∞∞", //borrar cadena de caracteres
                             @"000111" : @">",
                             @"001011" : @"<",
                             @"100111" : @"_", //guíon bajo
                             @"000001" : @" ", //espacio
-                            @"000010" : @"∞", //borrar
+                            @"000010" : @"∞", //borrar carácter
                             @"111111" : @"\n", //salto de línea
                             @"000000" : @" " //no puede ser nada
                             };
@@ -211,8 +211,8 @@
                        //@"010111" : @"w",
                          @"111101" : @"&",
                          @"001000" : @".",
-                         @"001111" : @" ", //prefijo numérico
-                         @"000101" : @" ", //prefijo mayúscula
+                         @"001111" : @"ª", //prefijo numérico
+                         @"000101" : @"ª", //prefijo mayúscula
                          @"010000" : @",",
                          @"011000" : @";",
                          @"010010" : @":",
@@ -228,16 +228,16 @@
                          @"001110" : @")",
                          @"100001" : @"/",
                          @"100011" : @"%",
-                         @"100101" : @"#",
+                         @"100101" : @"+",
                          @"011011" : @"^",
-                       //@"110101" : @"ç",
+                         @"110101" : @"\n", // salto de línea
                          @"000110" : @"=",
-                         @"000011" : @"+",
+                         @"000011" : @"∞∞", //borrar cadena de caracteres
                          @"000111" : @">",
                          @"001011" : @"<",
                          @"100111" : @"_", //guíon bajo
                          @"000001" : @" ", //espacio
-                         @"000010" : @"∞", //borrar
+                         @"000010" : @"∞", //borrar carácter
                          @"111111" : @"\n", //salto de línea
                          @"000000" : @" " //no puede ser nada
                          };
@@ -262,8 +262,17 @@
         }
     }
     
-    return self.dictMinusculas[key];
+    if ([usarDictionary isEqualToString:@"dictNumeros"]) {
+        return self.dictNumeros[key];
+    }else if ([usarDictionary isEqualToString:@"dictMayusculas"]){
+        return self.dictMayusculas[key];
+    }
+    
+return self.dictMinusculas[key];
+
 }
 
 
 @end
+
+

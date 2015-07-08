@@ -7,7 +7,20 @@
 //
 
 #import <UIKit/UIKit.h>
+#include "ViewController.h"
 
-@interface CompartirViewController : UIViewController
-    @property (nonatomic, strong) NSString *frase;
+@interface CompartirViewController : UIViewController <UITextFieldDelegate>
+
+@property (nonatomic, strong) NSString *frase;
+@property (nonatomic,strong) ViewController *parent;
+@property (strong, nonatomic) IBOutlet UITextView *fraseTextField;
+@property (strong, nonatomic) IBOutlet UITextField *mensajeTextField;
+
+@property (strong, nonatomic) IBOutlet UIButton *botonBORRAR;
+@property (strong, nonatomic) IBOutlet UIButton *botonVOLVERALTECLADO;
+@property (strong, nonatomic) IBOutlet UIButton *botonCOPIARENPORTAPAPELES;
+@property (strong, nonatomic) IBOutlet UIButton *botonENVIARSMS;
+@property (strong, nonatomic) IBOutlet UIButton *botonENVIARCORREO;
+@property (strong, nonatomic) IBOutlet UIButton *botonCOMPARTIRENFACEBOOK;
+
 @end

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
@@ -13,19 +13,16 @@
                         <viewControllerLayoutGuide type="top" id="jyV-Pf-zRb"/>
                         <viewControllerLayoutGuide type="bottom" id="2fi-mo-0CV"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="kh9-bI-dsS">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                    <view key="view" multipleTouchEnabled="YES" contentMode="scaleToFill" id="kh9-bI-dsS">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="95R-09-P2h">
-                                <rect key="frame" x="169" y="163" width="140" height="135"/>
-                                <state key="normal" backgroundImage="button2.png"/>
-                                <connections>
-                                    <action selector="boton2Presionado:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="yOn-Rq-XNW"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Q4n-p0-cCA">
                                 <rect key="frame" x="10" y="20" width="140" height="135"/>
+                                <accessibility key="accessibilityConfiguration">
+                                    <accessibilityTraits key="traits" none="YES"/>
+                                    <bool key="isElement" value="NO"/>
+                                </accessibility>
                                 <state key="normal" backgroundImage="button4.png">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -33,17 +30,12 @@
                                     <action selector="boton4Presionado:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="ywf-Hq-WBk"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xhv-1n-swV">
-                                <rect key="frame" x="10" y="307" width="140" height="134"/>
-                                <state key="normal" backgroundImage="button6.png">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="boton6Presionado:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="PDo-V8-tPH"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3Cc-LQ-QTx">
                                 <rect key="frame" x="10" y="163" width="140" height="135"/>
+                                <accessibility key="accessibilityConfiguration">
+                                    <accessibilityTraits key="traits" none="YES"/>
+                                    <bool key="isElement" value="NO"/>
+                                </accessibility>
                                 <state key="normal" backgroundImage="button5.png">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -53,6 +45,10 @@
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aLD-B4-brs">
                                 <rect key="frame" x="169" y="307" width="140" height="134"/>
+                                <accessibility key="accessibilityConfiguration">
+                                    <accessibilityTraits key="traits" none="YES"/>
+                                    <bool key="isElement" value="NO"/>
+                                </accessibility>
                                 <state key="normal" backgroundImage="button3.png">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -66,25 +62,55 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7y6-EK-h7p">
-                                <rect key="frame" x="169" y="20" width="140" height="135"/>
-                                <state key="normal" backgroundImage="button1.png">
-                                    <color key="titleShadowColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                </state>
-                                <connections>
-                                    <action selector="boton1Presionado:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="TtH-Io-fhJ"/>
-                                </connections>
-                            </button>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="lPC-Om-CLi">
                                 <rect key="frame" x="11" y="449" width="299" height="30"/>
+                                <accessibility key="accessibilityConfiguration">
+                                    <bool key="isElement" value="NO"/>
+                                </accessibility>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="95R-09-P2h">
+                                <rect key="frame" x="169" y="163" width="140" height="135"/>
+                                <accessibility key="accessibilityConfiguration">
+                                    <accessibilityTraits key="traits" none="YES"/>
+                                    <bool key="isElement" value="NO"/>
+                                </accessibility>
+                                <state key="normal" backgroundImage="button2.png"/>
+                                <connections>
+                                    <action selector="boton2Presionado:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="K9m-4e-sHC"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JZL-ad-NzH">
+                                <rect key="frame" x="169" y="20" width="140" height="135"/>
+                                <accessibility key="accessibilityConfiguration" label="">
+                                    <accessibilityTraits key="traits" none="YES"/>
+                                    <bool key="isElement" value="NO"/>
+                                </accessibility>
+                                <state key="normal" backgroundImage="button1.png"/>
+                                <connections>
+                                    <action selector="boton1Presionado:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="UUi-8W-0Q2"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xhv-1n-swV">
+                                <rect key="frame" x="10" y="307" width="140" height="134"/>
+                                <accessibility key="accessibilityConfiguration">
+                                    <accessibilityTraits key="traits" none="YES"/>
+                                    <bool key="isElement" value="NO"/>
+                                </accessibility>
+                                <state key="normal" backgroundImage="button6.png">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="boton6Presionado:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="PDo-V8-tPH"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" id="zNe-J2-ZKl"/>
-                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                    <simulatedOrientationMetrics key="simulatedOrientationMetrics"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
                     <connections>
                         <outlet property="mensajeTextField" destination="lPC-Om-CLi" id="i8f-aK-MJB"/>
                         <segue destination="saV-Ba-7LZ" kind="show" identifier="show_compartir" id="kD5-5Q-BaX"/>
@@ -103,72 +129,63 @@
                         <viewControllerLayoutGuide type="bottom" id="8uS-8F-Qon"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="mdn-hs-8Yr">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="z02-4m-VIU">
-                                <rect key="frame" x="0.0" y="-81" width="320" height="705"/>
-                                <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hip-1D-yeh">
-                                        <rect key="frame" x="42" y="425" width="106" height="30"/>
-                                        <color key="backgroundColor" red="0.95789726666471298" green="0.99531685837642137" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                        <state key="normal" title="BORRAR">
-                                            <color key="titleShadowColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                                        </state>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3Nx-KM-ZYk">
-                                        <rect key="frame" x="73" y="463" width="162" height="30"/>
-                                        <state key="normal" title="Copiar en Portapapeles">
-                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                        </state>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3v5-Ii-3h6">
-                                        <rect key="frame" x="114" y="488" width="80" height="30"/>
-                                        <state key="normal" title="Enviar SMS">
-                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                        </state>
-                                    </button>
-                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="Hola" translatesAutoresizingMaskIntoConstraints="NO" id="Oc3-7E-0aC">
-                                        <rect key="frame" x="20" y="101" width="280" height="316"/>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                                    </textView>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="z5T-bs-ctd">
-                                        <rect key="frame" x="113" y="518" width="94" height="30"/>
-                                        <state key="normal" title="Enviar Correo">
-                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                        </state>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="i6M-bi-piz">
-                                        <rect key="frame" x="77" y="543" width="166" height="30"/>
-                                        <state key="normal" title="Compartir en WhatsApp">
-                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                        </state>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hQr-ow-xDD">
-                                        <rect key="frame" x="81" y="575" width="162" height="30"/>
-                                        <state key="normal" title="Compartir en Facebook">
-                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                        </state>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="i16-GJ-Soc">
-                                        <rect key="frame" x="161" y="425" width="106" height="30"/>
-                                        <color key="backgroundColor" red="0.95789726669999997" green="0.99531685839999995" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                        <state key="normal" title="VOLVER">
-                                            <color key="titleShadowColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="volverAction:" destination="saV-Ba-7LZ" eventType="touchUpInside" id="bn0-6q-qrI"/>
-                                        </connections>
-                                    </button>
-                                </subviews>
-                            </scrollView>
+                            <button opaque="NO" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="3Nx-KM-ZYk">
+                                <rect key="frame" x="16" y="332" width="140" height="128"/>
+                                <color key="backgroundColor" red="0.084301767629999996" green="0.46062831030000001" blue="0.69750236740000005" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="    COPIAR EN PORTAPAPELES">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Oc3-7E-0aC">
+                                <rect key="frame" x="23" y="28" width="275" height="112"/>
+                                <color key="backgroundColor" red="0.89064472853535359" green="0.89064472853535359" blue="0.89064472853535359" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <button opaque="NO" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="z5T-bs-ctd">
+                                <rect key="frame" x="174" y="332" width="130" height="128"/>
+                                <color key="backgroundColor" red="0.084301767629999996" green="0.46062831030000001" blue="0.69750236740000005" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="ENVIAR CORREO">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="sendMailCocoa:" destination="saV-Ba-7LZ" eventType="touchUpOutside" id="4wV-zY-cud"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="i16-GJ-Soc">
+                                <rect key="frame" x="174" y="169" width="130" height="142"/>
+                                <color key="backgroundColor" red="0.084301767629999996" green="0.46062831030000001" blue="0.69750236740000005" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="VOLVER AL TECLADO">
+                                    <color key="titleShadowColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="volverAction:" destination="saV-Ba-7LZ" eventType="touchUpInside" id="bn0-6q-qrI"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hip-1D-yeh">
+                                <rect key="frame" x="16" y="169" width="140" height="142"/>
+                                <color key="backgroundColor" red="0.084301767626456775" green="0.4606283103176374" blue="0.69750236742424243" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="BORRAR">
+                                    <color key="titleShadowColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="Borrar:" destination="saV-Ba-7LZ" eventType="touchUpInside" id="Sbf-dE-OFB"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" id="5ji-7X-rwB"/>
-                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                    <simulatedOrientationMetrics key="simulatedOrientationMetrics"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
+                    <connections>
+                        <outlet property="fraseTextField" destination="Oc3-7E-0aC" id="3OP-ZS-mTh"/>
+                        <outlet property="mensajeTextField" destination="Oc3-7E-0aC" id="eOX-km-cwa"/>
+                        <outlet property="mensajeTextView" destination="Oc3-7E-0aC" id="cyF-Fd-3M9"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ibj-Vb-5lz" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
