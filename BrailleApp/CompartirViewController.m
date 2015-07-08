@@ -195,7 +195,7 @@
     UITouch* touch = [[event allTouches] anyObject];
     if (touch.tapCount == 2) {
         
-        [NSObject cancelPreviousPerformRequestsWithTarget:self selector:@selector(Borrar:) object:sender];
+        [NSObject cancelPreviousPerformRequestsWithTarget:self selector:@selector(decirBorrar) object:sender];
         
         // do action.
         self.mensajeTextView.text = @"";
@@ -223,7 +223,7 @@
     UITouch* touch = [[event allTouches] anyObject];
     if (touch.tapCount == 2) {
         
-        [NSObject cancelPreviousPerformRequestsWithTarget:self selector:@selector(Volver:) object:sender];
+        [NSObject cancelPreviousPerformRequestsWithTarget:self selector:@selector(decirVolver) object:sender];
 
         // do action.
         [self dismissViewControllerAnimated:YES completion:nil];
@@ -234,7 +234,7 @@
     UITouch* touch = [[event allTouches] anyObject];
     if (touch.tapCount == 2) {
         
-        [NSObject cancelPreviousPerformRequestsWithTarget:self selector:@selector(Copiar:) object:sender];
+        [NSObject cancelPreviousPerformRequestsWithTarget:self selector:@selector(decirCopiar) object:sender];
         
         NSString *copyStringverse = self.mensajeTextView.text;
         UIPasteboard *pb = [UIPasteboard generalPasteboard];
@@ -246,7 +246,7 @@
     UITouch* touch = [[event allTouches] anyObject];
     if (touch.tapCount == 2) {
         
-        [NSObject cancelPreviousPerformRequestsWithTarget:self selector:@selector(Mail:) object:sender];
+        [NSObject cancelPreviousPerformRequestsWithTarget:self selector:@selector(decirMail) object:sender];
 
         // Email Subject
         NSString *emailTitle = @"BrailleApp Text";
