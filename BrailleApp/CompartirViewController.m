@@ -43,15 +43,6 @@
     [self.btnMail addTarget:self action:@selector(haceMail:withEvent:)
      forControlEvents:UIControlEventTouchDownRepeat];
     
-    [self.btnBorrar addTarget:self action:@selector(haceBorrar:withEvent:)
-             forControlEvents:UICO];
-    [self.btnVolver addTarget:self action:@selector(haceVolver:withEvent:)
-             forControlEvents:UIControlEventTouchDownRepeat];
-    [self.btnCopiar addTarget:self action:@selector(haceCopiar:withEvent:)
-             forControlEvents:UIControlEventTouchDownRepeat];
-    [self.btnMail addTarget:self action:@selector(haceMail:withEvent:)
-           forControlEvents:UIControlEventTouchDownRepeat];
-    
     UITapGestureRecognizer *singleTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(haceRepetir)];
     
     //modify this number to recognizer number of tap
