@@ -218,11 +218,11 @@
     if (touch.tapCount == 2) {
 
         // Email Subject
-        NSString *emailTitle = @"Test Email";
+        NSString *emailTitle = @"BrailleApp Text";
         // Email Content
-        NSString *messageBody = @"iOS programming is so fun!";
+        NSString *messageBody = self.frase;
         // To address
-        NSArray *toRecipents = [NSArray arrayWithObject:@"support@appcoda.com"];
+        NSArray *toRecipents = nil;
         
         MFMailComposeViewController *mc = [[MFMailComposeViewController alloc] init];
         mc.mailComposeDelegate = self;
@@ -232,12 +232,6 @@
         
         // Present mail view controller on screen
         [self presentViewController:mc animated:YES completion:NULL];
-        
-//        self.mailComposer = [[MFMailComposeViewController alloc]init];
-//        self.mailComposer.mailComposeDelegate = self;
-//        [self.mailComposer setSubject:@"Test mail"];
-//        [self.mailComposer setMessageBody:@"Testing message for the test mail" isHTML:NO];
-//        [self presentViewController:self.mailComposer animated:YES completion:NULL];
 
     }
 }
