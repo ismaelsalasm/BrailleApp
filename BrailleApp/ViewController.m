@@ -169,8 +169,20 @@
     
     if ([value isEqual:@"ª"]){
         self.usarNumeros = YES;
+        
+        AVSpeechUtterance *utterance = [AVSpeechUtterance speechUtteranceWithString:@"Numero"];
+        utterance.rate = AVSpeechUtteranceMaximumSpeechRate/7;
+        AVSpeechSynthesisVoice *synthesizer_voice_es = [AVSpeechSynthesisVoice voiceWithLanguage:@"es-ES"];
+        utterance.voice = synthesizer_voice_es;
+        [self.synthesizer speakUtterance:utterance];
     }else if ([value isEqual:@"º"]){
         self.usarMayuscula = YES;
+        
+        AVSpeechUtterance *utterance = [AVSpeechUtterance speechUtteranceWithString:@"Mayusculas"];
+        utterance.rate = AVSpeechUtteranceMaximumSpeechRate/7;
+        AVSpeechSynthesisVoice *synthesizer_voice_es = [AVSpeechSynthesisVoice voiceWithLanguage:@"es-ES"];
+        utterance.voice = synthesizer_voice_es;
+        [self.synthesizer speakUtterance:utterance];
     }
     else{
         
@@ -186,21 +198,41 @@
         if ([value isEqual:@"∞"]) {
             if ([self.frase length] > 0) {
                 self.frase = [self.frase substringToIndex:[self.frase length] - 1];
+                
+                AVSpeechUtterance *utterance = [AVSpeechUtterance speechUtteranceWithString:@"Borrar Caracter"];
+                utterance.rate = AVSpeechUtteranceMaximumSpeechRate/7;
+                AVSpeechSynthesisVoice *synthesizer_voice_es = [AVSpeechSynthesisVoice voiceWithLanguage:@"es-ES"];
+                utterance.voice = synthesizer_voice_es;
+                [self.synthesizer speakUtterance:utterance];
             } else {
                 
                 //no characters to delete... attempting to do so will result in a crash
             }
         } else if ([value isEqual:@"∞∞"]){
             self.frase = @"";
+            
+            AVSpeechUtterance *utterance = [AVSpeechUtterance speechUtteranceWithString:@"Borrar"];
+            utterance.rate = AVSpeechUtteranceMaximumSpeechRate/7;
+            AVSpeechSynthesisVoice *synthesizer_voice_es = [AVSpeechSynthesisVoice voiceWithLanguage:@"es-ES"];
+            utterance.voice = synthesizer_voice_es;
+            [self.synthesizer speakUtterance:utterance];
+            
         } else if ([value isEqual:@"|"]){
+            
             AVSpeechUtterance *utterance = [AVSpeechUtterance speechUtteranceWithString:@"Posición correcta"];
             utterance.rate = AVSpeechUtteranceMaximumSpeechRate/7;
-            
             AVSpeechSynthesisVoice *synthesizer_voice_es = [AVSpeechSynthesisVoice voiceWithLanguage:@"es-ES"];
-            
             utterance.voice = synthesizer_voice_es;
-            
             [self.synthesizer speakUtterance:utterance];
+            
+        } else if ([value isEqual:@" "]){
+            
+            AVSpeechUtterance *utterance = [AVSpeechUtterance speechUtteranceWithString:@"Espacio"];
+            utterance.rate = AVSpeechUtteranceMaximumSpeechRate/7;
+            AVSpeechSynthesisVoice *synthesizer_voice_es = [AVSpeechSynthesisVoice voiceWithLanguage:@"es-ES"];
+            utterance.voice = synthesizer_voice_es;
+            [self.synthesizer speakUtterance:utterance];
+            
         }
         else{
             self.frase = [self.frase stringByAppendingString:value];
