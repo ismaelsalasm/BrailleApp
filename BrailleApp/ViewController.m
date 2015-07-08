@@ -107,6 +107,16 @@
     swipeRecognizer.direction = UISwipeGestureRecognizerDirectionLeft;
     swipeRecognizer.delegate = self;
     [self.view addGestureRecognizer:swipeRecognizer];
+    
+    
+    AVSpeechUtterance *utterance = [AVSpeechUtterance speechUtteranceWithString:@"BrailleApp"];
+    utterance.rate = AVSpeechUtteranceMaximumSpeechRate/7;
+    
+    AVSpeechSynthesisVoice *synthesizer_voice_es = [AVSpeechSynthesisVoice voiceWithLanguage:@"es-ES"];
+    
+    utterance.voice = synthesizer_voice_es;
+    
+    [self.synthesizer speakUtterance:utterance];
 }
 
 - (void)hideKeyBoard {
@@ -182,6 +192,15 @@
             }
         } else if ([value isEqual:@"∞∞"]){
             self.frase = @"";
+        } else if ([value isEqual:@"|"]){
+            AVSpeechUtterance *utterance = [AVSpeechUtterance speechUtteranceWithString:@"Posición correcta"];
+            utterance.rate = AVSpeechUtteranceMaximumSpeechRate/7;
+            
+            AVSpeechSynthesisVoice *synthesizer_voice_es = [AVSpeechSynthesisVoice voiceWithLanguage:@"es-ES"];
+            
+            utterance.voice = synthesizer_voice_es;
+            
+            [self.synthesizer speakUtterance:utterance];
         }
         else{
             self.frase = [self.frase stringByAppendingString:value];
