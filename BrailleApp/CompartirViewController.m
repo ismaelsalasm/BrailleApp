@@ -43,6 +43,15 @@
     [self.btnMail addTarget:self action:@selector(haceMail:withEvent:)
      forControlEvents:UIControlEventTouchDownRepeat];
     
+    [self.btnBorrar addTarget:self action:@selector(haceBorrar:withEvent:)
+             forControlEvents:UICO];
+    [self.btnVolver addTarget:self action:@selector(haceVolver:withEvent:)
+             forControlEvents:UIControlEventTouchDownRepeat];
+    [self.btnCopiar addTarget:self action:@selector(haceCopiar:withEvent:)
+             forControlEvents:UIControlEventTouchDownRepeat];
+    [self.btnMail addTarget:self action:@selector(haceMail:withEvent:)
+           forControlEvents:UIControlEventTouchDownRepeat];
+    
     UITapGestureRecognizer *singleTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(haceRepetir)];
     
     //modify this number to recognizer number of tap
@@ -174,6 +183,9 @@
 -(IBAction)haceBorrar:(id)sender withEvent:(UIEvent*)event {
     UITouch* touch = [[event allTouches] anyObject];
     if (touch.tapCount == 2) {
+        
+        [NSObject cancelPreviousPerformRequestsWithTarget:self selector:@selector(Borrar:) object:sender];
+        
         // do action.
         self.mensajeTextView.text = @"";
         self.frase = @"";
@@ -199,6 +211,9 @@
 -(IBAction)haceVolver:(id)sender withEvent:(UIEvent*)event {
     UITouch* touch = [[event allTouches] anyObject];
     if (touch.tapCount == 2) {
+        
+        [NSObject cancelPreviousPerformRequestsWithTarget:self selector:@selector(Volver:) object:sender];
+
         // do action.
         [self dismissViewControllerAnimated:YES completion:nil];
     }
@@ -207,6 +222,9 @@
 -(IBAction)haceCopiar:(id)sender withEvent:(UIEvent*)event {
     UITouch* touch = [[event allTouches] anyObject];
     if (touch.tapCount == 2) {
+        
+        [NSObject cancelPreviousPerformRequestsWithTarget:self selector:@selector(Copiar:) object:sender];
+        
         NSString *copyStringverse = self.mensajeTextView.text;
         UIPasteboard *pb = [UIPasteboard generalPasteboard];
         [pb setString:copyStringverse];
@@ -216,6 +234,8 @@
 -(IBAction)haceMail:(id)sender withEvent:(UIEvent*)event {
     UITouch* touch = [[event allTouches] anyObject];
     if (touch.tapCount == 2) {
+        
+        [NSObject cancelPreviousPerformRequestsWithTarget:self selector:@selector(Mail:) object:sender];
 
         // Email Subject
         NSString *emailTitle = @"BrailleApp Text";
