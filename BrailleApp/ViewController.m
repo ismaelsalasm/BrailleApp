@@ -195,7 +195,16 @@
             utterance.voice = synthesizer_voice_es;
             [self.synthesizer speakUtterance:utterance];
         }
-        
+
+        ///////////
+        if ([value isEqual:@"\n"]){
+            AVSpeechUtterance *utterance = [AVSpeechUtterance speechUtteranceWithString:@"Enter"];
+            utterance.rate = AVSpeechUtteranceMaximumSpeechRate/7;
+            AVSpeechSynthesisVoice *synthesizer_voice_es = [AVSpeechSynthesisVoice voiceWithLanguage:@"es-ES"];
+            utterance.voice = synthesizer_voice_es;
+            [self.synthesizer speakUtterance:utterance];
+        }
+        ///////////
         
         NSLog(@"Respuesta: %@",value);
         
