@@ -44,13 +44,13 @@
      forControlEvents:UIControlEventTouchDownRepeat];
     
     
-    [self.btnBorrar addTarget:self action:@selector(Borrar:)
+    [self.btnBorrar addTarget:self action:@selector(pressBorrar:)
              forControlEvents:UIControlEventTouchUpInside];
-    [self.btnVolver addTarget:self action:@selector(Volver:)
+    [self.btnVolver addTarget:self action:@selector(pressVolver:)
              forControlEvents:UIControlEventTouchUpInside];
-    [self.btnCopiar addTarget:self action:@selector(Copiar:)
+    [self.btnCopiar addTarget:self action:@selector(pressCopiar:)
              forControlEvents:UIControlEventTouchUpInside];
-    [self.btnMail addTarget:self action:@selector(Mail:)
+    [self.btnMail addTarget:self action:@selector(pressMail:)
            forControlEvents:UIControlEventTouchUpInside];
     
     UITapGestureRecognizer *singleTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(haceRepetir)];
@@ -137,7 +137,20 @@
     [self sendSMS:self.frase recipientList:[NSArray arrayWithObjects: nil]];
 }*/
 
-- (IBAction)Borrar:(id)sender{
+- (IBAction)pressBorrar:(id)sender{
+    [self performSelector:@selector(decirBorrar) withObject:sender afterDelay:0.2];
+}
+- (IBAction)pressVolver:(id)sender {
+    [self performSelector:@selector(decirVolver) withObject:sender afterDelay:0.2];
+}
+- (IBAction)pressCopiar:(id)sender {
+    [self performSelector:@selector(decirCopiar) withObject:sender afterDelay:0.2];
+}
+- (IBAction)pressMail:(id)sender {
+    [self performSelector:@selector(decirMail) withObject:sender afterDelay:0.2];
+}
+
+- (void)decirBorrar{
     AVSpeechUtterance *utterance = [AVSpeechUtterance speechUtteranceWithString:@"Borrar"];
     utterance.rate = AVSpeechUtteranceMaximumSpeechRate/7;
 
@@ -147,7 +160,7 @@
     
     [self.parent.synthesizer speakUtterance:utterance];
 }
-- (IBAction)Volver:(id)sender {
+- (void)decirVolver{
     AVSpeechUtterance *utterance = [AVSpeechUtterance speechUtteranceWithString:@"Volver al Teclado"];
     utterance.rate = AVSpeechUtteranceMaximumSpeechRate/7;
     
@@ -157,7 +170,7 @@
     
     [self.parent.synthesizer speakUtterance:utterance];
 }
-- (IBAction)Copiar:(id)sender {
+- (void)decirCopiar{
     AVSpeechUtterance *utterance = [AVSpeechUtterance speechUtteranceWithString:@"Copiar en Portapapeles"];
     utterance.rate = AVSpeechUtteranceMaximumSpeechRate/7;
     
@@ -167,7 +180,7 @@
     
     [self.parent.synthesizer speakUtterance:utterance];
 }
-- (IBAction)Mail:(id)sender {
+- (void)decirMail{
     AVSpeechUtterance *utterance = [AVSpeechUtterance speechUtteranceWithString:@"Enviar correo"];
     utterance.rate = AVSpeechUtteranceMaximumSpeechRate/7;
     
