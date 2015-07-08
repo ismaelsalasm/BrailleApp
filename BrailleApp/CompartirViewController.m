@@ -216,7 +216,16 @@
 -(IBAction)haceMail:(id)sender withEvent:(UIEvent*)event {
     UITouch* touch = [[event allTouches] anyObject];
     if (touch.tapCount == 2) {
-        // do action.
+        NSURL *     url;
+        
+        // Create the URL.
+        
+        url = [NSURL URLWithString:@"mailto:dts@apple.com"
+               "?subject=Hello%20Cruel%20World!"
+               "&body=Share%20and%20Enjoy"
+               ];
+        
+        // Open the URL
     }
 }
 
@@ -229,21 +238,25 @@
 // This routine's prototype makes it easy to connect it as
 // the action of a user interface object in Interface Builder.
 {
-    NSURL *     url;
-    
-    // Create the URL.
-    
-    url = [NSURL URLWithString:@"mailto:dts@apple.com"
-           "?subject=Hello%20Cruel%20World!"
-           "&body=Share%20and%20Enjoy"
-           ];
-    assert(url != nil);
-    
-    // Open the URL
-    
-//- (void) [[NSWorkspace sharedWorkspace] openURL:url];
+    self.mailComposer = [[MFMailComposeViewController alloc]init];
+    self.mailComposer.mailComposeDelegate = self;
+    [self.mailComposer setSubject:@"Test mail"];
+    [self.mailComposer setMessageBody:@"Testing message for the test mail" isHTML:NO];
+    [self presentViewController:self.mailComposer animated:YES completion:NULL];
 }
 
+
+#pragma mark - mail compose delegate
+-(void)mailComposeController:(MFMailComposeViewController *)controller
+         didFinishWithResult:(MFMailComposeResult)result error:(NSError *)error{
+    if (result) {
+        NSLog(@"Result : %d",result);
+    }
+    if (error) {
+        NSLog(@"Error : %@",error);
+    }
+    [self dismissViewControllerAnimated:YES completion:NULL];
+}
 
 
 /*NSURL *facebookURL = [NSURL URLWithString:@"fb://friends"];

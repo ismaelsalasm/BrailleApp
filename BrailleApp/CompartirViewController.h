@@ -7,9 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <MessageUI/MessageUI.h>
 #include "ViewController.h"
 
-@interface CompartirViewController : UIViewController <UITextFieldDelegate>
+@interface CompartirViewController : UIViewController <UITextFieldDelegate,MFMailComposeViewControllerDelegate>
 
 @property (nonatomic, strong) NSString *frase;
 @property (nonatomic,strong) ViewController *parent;
@@ -22,5 +23,8 @@
 @property (strong, nonatomic) IBOutlet UIButton *botonENVIARSMS;
 @property (strong, nonatomic) IBOutlet UIButton *botonENVIARCORREO;
 @property (strong, nonatomic) IBOutlet UIButton *botonCOMPARTIRENFACEBOOK;
+
+@property (strong, nonatomic) MFMailComposeViewController *mailComposer;
+
 
 @end
