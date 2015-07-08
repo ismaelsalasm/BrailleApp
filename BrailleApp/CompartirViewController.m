@@ -216,16 +216,29 @@
 -(IBAction)haceMail:(id)sender withEvent:(UIEvent*)event {
     UITouch* touch = [[event allTouches] anyObject];
     if (touch.tapCount == 2) {
-        NSURL *     url;
+
+        // Email Subject
+        NSString *emailTitle = @"Test Email";
+        // Email Content
+        NSString *messageBody = @"iOS programming is so fun!";
+        // To address
+        NSArray *toRecipents = [NSArray arrayWithObject:@"support@appcoda.com"];
         
-        // Create the URL.
+        MFMailComposeViewController *mc = [[MFMailComposeViewController alloc] init];
+        mc.mailComposeDelegate = self;
+        [mc setSubject:emailTitle];
+        [mc setMessageBody:messageBody isHTML:NO];
+        [mc setToRecipients:toRecipents];
         
-        url = [NSURL URLWithString:@"mailto:dts@apple.com"
-               "?subject=Hello%20Cruel%20World!"
-               "&body=Share%20and%20Enjoy"
-               ];
+        // Present mail view controller on screen
+        [self presentViewController:mc animated:YES completion:NULL];
         
-        // Open the URL
+//        self.mailComposer = [[MFMailComposeViewController alloc]init];
+//        self.mailComposer.mailComposeDelegate = self;
+//        [self.mailComposer setSubject:@"Test mail"];
+//        [self.mailComposer setMessageBody:@"Testing message for the test mail" isHTML:NO];
+//        [self presentViewController:self.mailComposer animated:YES completion:NULL];
+
     }
 }
 
@@ -238,26 +251,37 @@
 // This routine's prototype makes it easy to connect it as
 // the action of a user interface object in Interface Builder.
 {
-    self.mailComposer = [[MFMailComposeViewController alloc]init];
-    self.mailComposer.mailComposeDelegate = self;
-    [self.mailComposer setSubject:@"Test mail"];
-    [self.mailComposer setMessageBody:@"Testing message for the test mail" isHTML:NO];
-    [self presentViewController:self.mailComposer animated:YES completion:NULL];
+
+    
+
 }
 
 
 #pragma mark - mail compose delegate
--(void)mailComposeController:(MFMailComposeViewController *)controller
-         didFinishWithResult:(MFMailComposeResult)result error:(NSError *)error{
-    if (result) {
-        NSLog(@"Result : %d",result);
+
+- (void) mailComposeController:(MFMailComposeViewController *)controller didFinishWithResult:(MFMailComposeResult)result error:(NSError *)error
+{
+    switch (result)
+    {
+        case MFMailComposeResultCancelled:
+            NSLog(@"Mail cancelled");
+            break;
+        case MFMailComposeResultSaved:
+            NSLog(@"Mail saved");
+            break;
+        case MFMailComposeResultSent:
+            NSLog(@"Mail sent");
+            break;
+        case MFMailComposeResultFailed:
+            NSLog(@"Mail sent failure: %@", [error localizedDescription]);
+            break;
+        default:
+            break;
     }
-    if (error) {
-        NSLog(@"Error : %@",error);
-    }
+    
+    // Close the Mail Interface
     [self dismissViewControllerAnimated:YES completion:NULL];
 }
-
 
 /*NSURL *facebookURL = [NSURL URLWithString:@"fb://friends"];
 if ([[UIApplication sharedApplication] canOpenURL:facebookURL]) {
