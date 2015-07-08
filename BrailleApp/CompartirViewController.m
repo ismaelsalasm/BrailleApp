@@ -43,6 +43,16 @@
     [self.btnMail addTarget:self action:@selector(haceMail:withEvent:)
      forControlEvents:UIControlEventTouchDownRepeat];
     
+    
+    [self.btnBorrar addTarget:self action:@selector(Borrar:)
+             forControlEvents:UIControlEventTouchUpInside];
+    [self.btnVolver addTarget:self action:@selector(Volver:)
+             forControlEvents:UIControlEventTouchUpInside];
+    [self.btnCopiar addTarget:self action:@selector(Copiar:)
+             forControlEvents:UIControlEventTouchUpInside];
+    [self.btnMail addTarget:self action:@selector(Mail:)
+           forControlEvents:UIControlEventTouchUpInside];
+    
     UITapGestureRecognizer *singleTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(haceRepetir)];
     
     //modify this number to recognizer number of tap
@@ -110,9 +120,6 @@
     // Pass the selected object to the new view controller.
 }
 */
-- (IBAction)volverAction:(id)sender {
-//    [self dismissViewControllerAnimated:YES completion:nil];
-}
 
 /*- (void)sendSMS:(NSString *)bodyOfMessage recipientList:(NSArray *)recipients
 {
@@ -245,20 +252,6 @@
         [self presentViewController:mc animated:YES completion:NULL];
 
     }
-}
-
-- (IBAction)sendMailCocoa:(id)sender
-// Create a mail message in the user's preferred mail client
-// by opening a mailto URL. The extended mailto URL format
-// is documented by RFC 2368 and is supported by Mail.app
-// and other modern mail clients.
-//
-// This routine's prototype makes it easy to connect it as
-// the action of a user interface object in Interface Builder.
-{
-
-    
-
 }
 
 
