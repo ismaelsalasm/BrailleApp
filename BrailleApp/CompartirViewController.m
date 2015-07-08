@@ -34,24 +34,64 @@
     self.mensajeTextField.delegate = self;
     
     
-    [self.btnBorrar addTarget:self action:@selector(haceBorrar:withEvent:)
-     forControlEvents:UIControlEventTouchDownRepeat];
-    [self.btnVolver addTarget:self action:@selector(haceVolver:withEvent:)
-     forControlEvents:UIControlEventTouchDownRepeat];
-    [self.btnCopiar addTarget:self action:@selector(haceCopiar:withEvent:)
-     forControlEvents:UIControlEventTouchDownRepeat];
-    [self.btnMail addTarget:self action:@selector(haceMail:withEvent:)
-     forControlEvents:UIControlEventTouchDownRepeat];
+    // [self.btnBorrar addTarget:self action:@selector(haceBorrar:withEvent:)
+    //  forControlEvents:UIControlEventTouchDownRepeat];
+    // [self.btnVolver addTarget:self action:@selector(haceVolver:withEvent:)
+    //  forControlEvents:UIControlEventTouchDownRepeat];
+    // [self.btnCopiar addTarget:self action:@selector(haceCopiar:withEvent:)
+    //  forControlEvents:UIControlEventTouchDownRepeat];
+    // [self.btnMail addTarget:self action:@selector(haceMail:withEvent:)
+    //  forControlEvents:UIControlEventTouchDownRepeat];
     
     
-    [self.btnBorrar addTarget:self action:@selector(pressBorrar:)
-             forControlEvents:UIControlEventTouchUpInside];
-    [self.btnVolver addTarget:self action:@selector(pressVolver:)
-             forControlEvents:UIControlEventTouchUpInside];
-    [self.btnCopiar addTarget:self action:@selector(pressCopiar:)
-             forControlEvents:UIControlEventTouchUpInside];
-    [self.btnMail addTarget:self action:@selector(pressMail:)
-           forControlEvents:UIControlEventTouchUpInside];
+    // [self.btnBorrar addTarget:self action:@selector(pressBorrar:)
+    //          forControlEvents:UIControlEventTouchUpInside];
+    // [self.btnVolver addTarget:self action:@selector(pressVolver:)
+    //          forControlEvents:UIControlEventTouchUpInside];
+    // [self.btnCopiar addTarget:self action:@selector(pressCopiar:)
+    //          forControlEvents:UIControlEventTouchUpInside];
+    // [self.btnMail addTarget:self action:@selector(pressMail:)
+    //        forControlEvents:UIControlEventTouchUpInside];
+
+    
+    UITapGestureRecognizer *doubleTapBorrar = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(haceBorrar)];
+    [doubleTapBorrar setNumberOfTapsRequired:2];
+    [self.btnBorrar addGestureRecognizer:doubleTapBorrar];
+    
+    UITapGestureRecognizer *doubleTapVolver = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(haceVolver)];
+    [doubleTapVolver setNumberOfTapsRequired:2];
+    [self.btnVolver addGestureRecognizer:doubleTapVolver];
+    
+    UITapGestureRecognizer *doubleTapCopiar = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(haceCopiar)];
+    [doubleTapCopiar setNumberOfTapsRequired:2];
+    [self.btnCopiar addGestureRecognizer:doubleTapCopiar];
+    
+    UITapGestureRecognizer *doubleTapMail = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(haceMail)];
+    [doubleTapMail setNumberOfTapsRequired:2];
+    [self.btnMail addGestureRecognizer:doubleTapMail];
+
+
+    UITapGestureRecognizer *singleTapBorrar = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(decirBorrar)];
+    [singleTapBorrar setNumberOfTapsRequired:1];
+    [singleTapBorrar requireGestureRecognizerToFail:doubleTapBorrar];
+    [self.btnBorrar addGestureRecognizer:singleTapBorrar];
+    
+    UITapGestureRecognizer *singleTapVolver = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(decirVolver)];
+    [singleTapVolver setNumberOfTapsRequired:1];
+    [singleTapVolver requireGestureRecognizerToFail:doubleTapVolver];
+    [self.btnVolver addGestureRecognizer:singleTapVolver];
+    
+    UITapGestureRecognizer *singleTapCopiar = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(decirCopiar)];
+    [singleTapCopiar setNumberOfTapsRequired:1];
+    [singleTapCopiar requireGestureRecognizerToFail:doubleTapCopiar];
+    [self.btnCopiar addGestureRecognizer:singleTapCopiar];
+    
+    UITapGestureRecognizer *singleTapMail = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(decirMail)];
+    [singleTapMail setNumberOfTapsRequired:1];
+    [singleTapMail requireGestureRecognizerToFail:doubleTapMail];
+    [self.btnMail addGestureRecognizer:singleTapMail];
+
+
     
     UITapGestureRecognizer *singleTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(haceRepetir)];
     
@@ -191,21 +231,15 @@
     [self.parent.synthesizer speakUtterance:utterance];
 }
 
--(IBAction)haceBorrar:(id)sender withEvent:(UIEvent*)event {
-    UITouch* touch = [[event allTouches] anyObject];
-    if (touch.tapCount == 2) {
-        
-        [NSObject cancelPreviousPerformRequestsWithTarget:self selector:@selector(decirBorrar) object:sender];
-        
-        // do action.
-        self.mensajeTextView.text = @"";
-        self.frase = @"";
-        
-        self.parent.frase = @"";
-        self.parent.mensajeTextField.text = @"";
-        
-        NSLog(@"Frase: %@",self.mensajeTextView.text);
-    }
+-(void)haceBorrar{        
+    // do action.
+    self.mensajeTextView.text = @"";
+    self.frase = @"";
+    
+    self.parent.frase = @"";
+    self.parent.mensajeTextField.text = @"";
+    
+    NSLog(@"Frase: %@",self.mensajeTextView.text);
 }
 
 -(IBAction)haceRepetir{
@@ -219,55 +253,33 @@
     [self.parent.synthesizer speakUtterance:utterance];
 }
 
--(IBAction)haceVolver:(id)sender withEvent:(UIEvent*)event {
-
-    [NSObject cancelPreviousPerformRequestsWithTarget:self selector:@selector(decirVolver) object:sender];
-
-    UITouch* touch = [[event allTouches] anyObject];
-    if (touch.tapCount == 2) {
-        
-
-        // do action.
-        [self dismissViewControllerAnimated:YES completion:nil];
-    }
+-(void)haceVolver{
+    // do action.
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
--(IBAction)haceCopiar:(id)sender withEvent:(UIEvent*)event {
-    [NSObject cancelPreviousPerformRequestsWithTarget:self selector:@selector(decirCopiar) object:sender];
-
-    UITouch* touch = [[event allTouches] anyObject];
-    if (touch.tapCount == 2) {
-        
-        
-        NSString *copyStringverse = self.mensajeTextView.text;
-        UIPasteboard *pb = [UIPasteboard generalPasteboard];
-        [pb setString:copyStringverse];
-    }
+-(void)haceCopiar{
+    NSString *copyStringverse = self.mensajeTextView.text;
+    UIPasteboard *pb = [UIPasteboard generalPasteboard];
+    [pb setString:copyStringverse];
 }
 
--(IBAction)haceMail:(id)sender withEvent:(UIEvent*)event {
-    UITouch* touch = [[event allTouches] anyObject];
-    if (touch.tapCount == 2) {
-        
-        [NSObject cancelPreviousPerformRequestsWithTarget:self selector:@selector(decirMail) object:sender];
-
-        // Email Subject
-        NSString *emailTitle = @"BrailleApp Text";
-        // Email Content
-        NSString *messageBody = self.frase;
-        // To address
-        NSArray *toRecipents = nil;
-        
-        MFMailComposeViewController *mc = [[MFMailComposeViewController alloc] init];
-        mc.mailComposeDelegate = self;
-        [mc setSubject:emailTitle];
-        [mc setMessageBody:messageBody isHTML:NO];
-        [mc setToRecipients:toRecipents];
-        
-        // Present mail view controller on screen
-        [self presentViewController:mc animated:YES completion:NULL];
-
-    }
+-(void)haceMail{
+    // Email Subject
+    NSString *emailTitle = @"BrailleApp Text";
+    // Email Content
+    NSString *messageBody = self.frase;
+    // To address
+    NSArray *toRecipents = nil;
+    
+    MFMailComposeViewController *mc = [[MFMailComposeViewController alloc] init];
+    mc.mailComposeDelegate = self;
+    [mc setSubject:emailTitle];
+    [mc setMessageBody:messageBody isHTML:NO];
+    [mc setToRecipients:toRecipents];
+    
+    // Present mail view controller on screen
+    [self presentViewController:mc animated:YES completion:NULL];
 }
 
 
