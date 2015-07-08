@@ -240,6 +240,12 @@
     self.parent.mensajeTextField.text = @"";
     
     NSLog(@"Frase: %@",self.mensajeTextView.text);
+    
+    AVSpeechUtterance *utterance = [AVSpeechUtterance speechUtteranceWithString:@"Texto Borrado"];
+    utterance.rate = AVSpeechUtteranceMaximumSpeechRate/7;
+    AVSpeechSynthesisVoice *synthesizer_voice_es = [AVSpeechSynthesisVoice voiceWithLanguage:@"es-ES"];
+    utterance.voice = synthesizer_voice_es;
+    [self.parent.synthesizer speakUtterance:utterance];
 }
 
 -(IBAction)haceRepetir{
@@ -262,6 +268,12 @@
     NSString *copyStringverse = self.mensajeTextView.text;
     UIPasteboard *pb = [UIPasteboard generalPasteboard];
     [pb setString:copyStringverse];
+    
+    AVSpeechUtterance *utterance = [AVSpeechUtterance speechUtteranceWithString:@"Texto Copiado"];
+    utterance.rate = AVSpeechUtteranceMaximumSpeechRate/7;
+    AVSpeechSynthesisVoice *synthesizer_voice_es = [AVSpeechSynthesisVoice voiceWithLanguage:@"es-ES"];
+    utterance.voice = synthesizer_voice_es;
+    [self.parent.synthesizer speakUtterance:utterance];
 }
 
 -(void)haceMail{
