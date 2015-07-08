@@ -220,10 +220,12 @@
 }
 
 -(IBAction)haceVolver:(id)sender withEvent:(UIEvent*)event {
+
+    [NSObject cancelPreviousPerformRequestsWithTarget:self selector:@selector(decirVolver) object:sender];
+
     UITouch* touch = [[event allTouches] anyObject];
     if (touch.tapCount == 2) {
         
-        [NSObject cancelPreviousPerformRequestsWithTarget:self selector:@selector(decirVolver) object:sender];
 
         // do action.
         [self dismissViewControllerAnimated:YES completion:nil];
@@ -231,10 +233,11 @@
 }
 
 -(IBAction)haceCopiar:(id)sender withEvent:(UIEvent*)event {
+    [NSObject cancelPreviousPerformRequestsWithTarget:self selector:@selector(decirCopiar) object:sender];
+
     UITouch* touch = [[event allTouches] anyObject];
     if (touch.tapCount == 2) {
         
-        [NSObject cancelPreviousPerformRequestsWithTarget:self selector:@selector(decirCopiar) object:sender];
         
         NSString *copyStringverse = self.mensajeTextView.text;
         UIPasteboard *pb = [UIPasteboard generalPasteboard];
