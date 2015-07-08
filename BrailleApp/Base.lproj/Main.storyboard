@@ -62,7 +62,7 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="lPC-Om-CLi">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="lPC-Om-CLi">
                                 <rect key="frame" x="11" y="449" width="299" height="30"/>
                                 <accessibility key="accessibilityConfiguration">
                                     <bool key="isElement" value="NO"/>
@@ -138,7 +138,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <button opaque="NO" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="z5T-bs-ctd">
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="z5T-bs-ctd">
                                 <rect key="frame" x="174" y="332" width="130" height="128"/>
                                 <color key="backgroundColor" red="0.084301767629999996" green="0.46062831030000001" blue="0.69750236740000005" alpha="1" colorSpace="calibratedRGB"/>
                                 <state key="normal" title="ENVIAR CORREO">
@@ -149,7 +149,7 @@
                                     <action selector="sendMailCocoa:" destination="saV-Ba-7LZ" eventType="touchUpOutside" id="4wV-zY-cud"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="i16-GJ-Soc">
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="i16-GJ-Soc">
                                 <rect key="frame" x="174" y="169" width="130" height="142"/>
                                 <color key="backgroundColor" red="0.084301767629999996" green="0.46062831030000001" blue="0.69750236740000005" alpha="1" colorSpace="calibratedRGB"/>
                                 <state key="normal" title="VOLVER AL TECLADO">
@@ -160,7 +160,7 @@
                                     <action selector="volverAction:" destination="saV-Ba-7LZ" eventType="touchUpInside" id="bn0-6q-qrI"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hip-1D-yeh">
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hip-1D-yeh">
                                 <rect key="frame" x="16" y="169" width="140" height="142"/>
                                 <color key="backgroundColor" red="0.084301767626456775" green="0.4606283103176374" blue="0.69750236742424243" alpha="1" colorSpace="calibratedRGB"/>
                                 <state key="normal" title="BORRAR">
@@ -170,7 +170,7 @@
                                     <action selector="Borrar:" destination="saV-Ba-7LZ" eventType="touchUpInside" id="Sbf-dE-OFB"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="3Nx-KM-ZYk">
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="3Nx-KM-ZYk">
                                 <rect key="frame" x="16" y="332" width="140" height="128"/>
                                 <color key="backgroundColor" red="0.084301767629999996" green="0.46062831030000001" blue="0.69750236740000005" alpha="1" colorSpace="calibratedRGB"/>
                                 <state key="normal" title="    COPIAR EN PORTAPAPELES">

@@ -94,7 +94,7 @@
                             @"100111" : @"_", //guíon bajo
                             @"000001" : @" ", //espacio
                             @"000010" : @"∞", //borrar carácter
-                            @"111111" : @"\n", //salto de línea
+                            @"111111" : @"|", //salto de línea
                             @"000000" : @" " //no puede ser nada
                             };
     }
@@ -166,7 +166,7 @@
                             @"100111" : @"_", //guíon bajo
                             @"000001" : @" ", //espacio
                             @"000010" : @"∞", //borrar carácter
-                            @"111111" : @"\n", //salto de línea
+                            @"111111" : @"|", //salto de línea
                             @"000000" : @" " //no puede ser nada
                             };
     }
@@ -238,7 +238,7 @@
                          @"100111" : @"_", //guíon bajo
                          @"000001" : @" ", //espacio
                          @"000010" : @"∞", //borrar carácter
-                         @"111111" : @"\n", //salto de línea
+                         @"111111" : @"|", //salto de línea
                          @"000000" : @" " //no puede ser nada
                          };
     }

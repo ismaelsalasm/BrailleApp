@@ -109,7 +109,7 @@
     [self.view addGestureRecognizer:swipeRecognizer];
     
     
-    AVSpeechUtterance *utterance = [AVSpeechUtterance speechUtteranceWithString:@"BrailleApp"];
+    AVSpeechUtterance *utterance = [AVSpeechUtterance speechUtteranceWithString:@"Braille Ap"];
     utterance.rate = AVSpeechUtteranceMaximumSpeechRate/7;
     
     AVSpeechSynthesisVoice *synthesizer_voice_es = [AVSpeechSynthesisVoice voiceWithLanguage:@"es-ES"];
