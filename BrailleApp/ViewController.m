@@ -188,6 +188,12 @@
         
         if ([value isEqual:@" "]){
             self.usarNumeros = NO;
+            
+            AVSpeechUtterance *utterance = [AVSpeechUtterance speechUtteranceWithString:@"Espacio"];
+            utterance.rate = AVSpeechUtteranceMaximumSpeechRate/7;
+            AVSpeechSynthesisVoice *synthesizer_voice_es = [AVSpeechSynthesisVoice voiceWithLanguage:@"es-ES"];
+            utterance.voice = synthesizer_voice_es;
+            [self.synthesizer speakUtterance:utterance];
         }
         
         
@@ -225,15 +231,7 @@
             utterance.voice = synthesizer_voice_es;
             [self.synthesizer speakUtterance:utterance];
             
-        } else if ([value isEqual:@" "]){
-            
-            AVSpeechUtterance *utterance = [AVSpeechUtterance speechUtteranceWithString:@"Espacio"];
-            utterance.rate = AVSpeechUtteranceMaximumSpeechRate/7;
-            AVSpeechSynthesisVoice *synthesizer_voice_es = [AVSpeechSynthesisVoice voiceWithLanguage:@"es-ES"];
-            utterance.voice = synthesizer_voice_es;
-            [self.synthesizer speakUtterance:utterance];
-            
-        }
+        } 
         else{
             self.frase = [self.frase stringByAppendingString:value];
         }
