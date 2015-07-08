@@ -132,14 +132,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="3Nx-KM-ZYk">
-                                <rect key="frame" x="16" y="332" width="140" height="128"/>
-                                <color key="backgroundColor" red="0.084301767629999996" green="0.46062831030000001" blue="0.69750236740000005" alpha="1" colorSpace="calibratedRGB"/>
-                                <state key="normal" title="    COPIAR EN PORTAPAPELES">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                            </button>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Oc3-7E-0aC">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Oc3-7E-0aC">
                                 <rect key="frame" x="23" y="28" width="275" height="112"/>
                                 <color key="backgroundColor" red="0.89064472853535359" green="0.89064472853535359" blue="0.89064472853535359" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -152,16 +145,18 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
+                                    <action selector="Mail:" destination="saV-Ba-7LZ" eventType="touchUpInside" id="NE6-oV-B7f"/>
                                     <action selector="sendMailCocoa:" destination="saV-Ba-7LZ" eventType="touchUpOutside" id="4wV-zY-cud"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="i16-GJ-Soc">
+                            <button opaque="NO" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="i16-GJ-Soc">
                                 <rect key="frame" x="174" y="169" width="130" height="142"/>
                                 <color key="backgroundColor" red="0.084301767629999996" green="0.46062831030000001" blue="0.69750236740000005" alpha="1" colorSpace="calibratedRGB"/>
                                 <state key="normal" title="VOLVER AL TECLADO">
                                     <color key="titleShadowColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
+                                    <action selector="Volver:" destination="saV-Ba-7LZ" eventType="touchUpInside" id="z8M-1u-H55"/>
                                     <action selector="volverAction:" destination="saV-Ba-7LZ" eventType="touchUpInside" id="bn0-6q-qrI"/>
                                 </connections>
                             </button>
@@ -175,6 +170,16 @@
                                     <action selector="Borrar:" destination="saV-Ba-7LZ" eventType="touchUpInside" id="Sbf-dE-OFB"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="3Nx-KM-ZYk">
+                                <rect key="frame" x="16" y="332" width="140" height="128"/>
+                                <color key="backgroundColor" red="0.084301767629999996" green="0.46062831030000001" blue="0.69750236740000005" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="    COPIAR EN PORTAPAPELES">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="Copiar:" destination="saV-Ba-7LZ" eventType="touchUpInside" id="zfI-94-Zyl"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -182,6 +187,10 @@
                     <simulatedOrientationMetrics key="simulatedOrientationMetrics"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
                     <connections>
+                        <outlet property="btnBorrar" destination="hip-1D-yeh" id="iLg-ow-URk"/>
+                        <outlet property="btnCopiar" destination="3Nx-KM-ZYk" id="Nj5-aa-udb"/>
+                        <outlet property="btnMail" destination="z5T-bs-ctd" id="20C-TM-u7C"/>
+                        <outlet property="btnVolver" destination="i16-GJ-Soc" id="f6h-ew-0Ag"/>
                         <outlet property="fraseTextField" destination="Oc3-7E-0aC" id="3OP-ZS-mTh"/>
                         <outlet property="mensajeTextField" destination="Oc3-7E-0aC" id="eOX-km-cwa"/>
                         <outlet property="mensajeTextView" destination="Oc3-7E-0aC" id="cyF-Fd-3M9"/>

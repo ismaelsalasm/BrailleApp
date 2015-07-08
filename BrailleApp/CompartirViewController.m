@@ -12,6 +12,10 @@
 
 @interface CompartirViewController () <UITextFieldDelegate, MFMessageComposeViewControllerDelegate>
 @property (strong, nonatomic) IBOutlet UITextView *mensajeTextView;
+@property (weak, nonatomic) IBOutlet UIButton *btnBorrar;
+@property (weak, nonatomic) IBOutlet UIButton *btnVolver;
+@property (weak, nonatomic) IBOutlet UIButton *btnCopiar;
+@property (weak, nonatomic) IBOutlet UIButton *btnMail;
 
 @end
 
@@ -28,6 +32,25 @@
     // Funciones para esconder el teclado estandar.
     
     self.mensajeTextField.delegate = self;
+    
+    
+    [self.btnBorrar addTarget:self action:@selector(haceBorrar:withEvent:)
+     forControlEvents:UIControlEventTouchDownRepeat];
+    [self.btnVolver addTarget:self action:@selector(haceVolver:withEvent:)
+     forControlEvents:UIControlEventTouchDownRepeat];
+    [self.btnCopiar addTarget:self action:@selector(haceCopiar:withEvent:)
+     forControlEvents:UIControlEventTouchDownRepeat];
+    [self.btnMail addTarget:self action:@selector(haceMail:withEvent:)
+     forControlEvents:UIControlEventTouchDownRepeat];
+    
+    UITapGestureRecognizer *singleTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(haceRepetir)];
+    
+    //modify this number to recognizer number of tap
+    [singleTap setNumberOfTapsRequired:1];
+    [self.mensajeTextView addGestureRecognizer:singleTap];
+
+    [self.btnVolver.titleLabel setTextAlignment: NSTextAlignmentCenter];
+    
     
     UITapGestureRecognizer * tapGesture = [[UITapGestureRecognizer alloc]
                                            initWithTarget:self
@@ -108,14 +131,92 @@
 }*/
 
 - (IBAction)Borrar:(id)sender{
+    AVSpeechUtterance *utterance = [AVSpeechUtterance speechUtteranceWithString:@"Borrar"];
+    utterance.rate = AVSpeechUtteranceMaximumSpeechRate/7;
 
-    self.mensajeTextView.text = @"";
-    self.frase = @"";
+    AVSpeechSynthesisVoice *synthesizer_voice_es = [AVSpeechSynthesisVoice voiceWithLanguage:@"es-ES"];
     
-    self.parent.frase = @"";
-    self.parent.mensajeTextField.text = @"";
+    utterance.voice = synthesizer_voice_es;
     
-    NSLog(@"Frase: %@",self.mensajeTextView.text);
+    [self.parent.synthesizer speakUtterance:utterance];
+}
+- (IBAction)Volver:(id)sender {
+    AVSpeechUtterance *utterance = [AVSpeechUtterance speechUtteranceWithString:@"Volver al Teclado"];
+    utterance.rate = AVSpeechUtteranceMaximumSpeechRate/7;
+    
+    AVSpeechSynthesisVoice *synthesizer_voice_es = [AVSpeechSynthesisVoice voiceWithLanguage:@"es-ES"];
+    
+    utterance.voice = synthesizer_voice_es;
+    
+    [self.parent.synthesizer speakUtterance:utterance];
+}
+- (IBAction)Copiar:(id)sender {
+    AVSpeechUtterance *utterance = [AVSpeechUtterance speechUtteranceWithString:@"Copiar en Portapapeles"];
+    utterance.rate = AVSpeechUtteranceMaximumSpeechRate/7;
+    
+    AVSpeechSynthesisVoice *synthesizer_voice_es = [AVSpeechSynthesisVoice voiceWithLanguage:@"es-ES"];
+    
+    utterance.voice = synthesizer_voice_es;
+    
+    [self.parent.synthesizer speakUtterance:utterance];
+}
+- (IBAction)Mail:(id)sender {
+    AVSpeechUtterance *utterance = [AVSpeechUtterance speechUtteranceWithString:@"Enviar correo"];
+    utterance.rate = AVSpeechUtteranceMaximumSpeechRate/7;
+    
+    AVSpeechSynthesisVoice *synthesizer_voice_es = [AVSpeechSynthesisVoice voiceWithLanguage:@"es-ES"];
+    
+    utterance.voice = synthesizer_voice_es;
+    
+    [self.parent.synthesizer speakUtterance:utterance];
+}
+
+-(IBAction)haceBorrar:(id)sender withEvent:(UIEvent*)event {
+    UITouch* touch = [[event allTouches] anyObject];
+    if (touch.tapCount == 2) {
+        // do action.
+        self.mensajeTextView.text = @"";
+        self.frase = @"";
+        
+        self.parent.frase = @"";
+        self.parent.mensajeTextField.text = @"";
+        
+        NSLog(@"Frase: %@",self.mensajeTextView.text);
+    }
+}
+
+-(IBAction)haceRepetir{
+    AVSpeechUtterance *utterance = [AVSpeechUtterance speechUtteranceWithString:self.frase];
+    utterance.rate = AVSpeechUtteranceMaximumSpeechRate/7;
+    
+    AVSpeechSynthesisVoice *synthesizer_voice_es = [AVSpeechSynthesisVoice voiceWithLanguage:@"es-ES"];
+    
+    utterance.voice = synthesizer_voice_es;
+    
+    [self.parent.synthesizer speakUtterance:utterance];
+}
+
+-(IBAction)haceVolver:(id)sender withEvent:(UIEvent*)event {
+    UITouch* touch = [[event allTouches] anyObject];
+    if (touch.tapCount == 2) {
+        // do action.
+    }
+}
+
+-(IBAction)haceCopiar:(id)sender withEvent:(UIEvent*)event {
+    UITouch* touch = [[event allTouches] anyObject];
+    if (touch.tapCount == 2) {
+        NSString *copyStringverse = self.mensajeTextView.text;
+        UIPasteboard *pb = [UIPasteboard generalPasteboard];
+        [pb setString:copyStringverse];
+    }
+}
+
+-(IBAction)haceMail:(id)sender withEvent:(UIEvent*)event {
+    UITouch* touch = [[event allTouches] anyObject];
+    if (touch.tapCount == 2) {
+        // do action.
+    }
 }
 
 - (IBAction)sendMailCocoa:(id)sender
